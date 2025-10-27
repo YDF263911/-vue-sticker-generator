@@ -1,18 +1,11 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "vue-sticker-generator/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "vue-sticker-generator/dist"
-      }
-    }
-  ],
+  "buildCommand": "cd vue-sticker-generator && npm run build",
+  "outputDirectory": "vue-sticker-generator/dist",
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/vue-sticker-generator/dist/index.html"
+      "dest": "/index.html"
     }
   ]
 }
