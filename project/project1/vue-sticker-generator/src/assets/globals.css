@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: oklch(0.05 0.01 265);
+  --foreground: oklch(0.98 0.01 265);
+  --card: oklch(0.08 0.02 265);
+  --card-foreground: oklch(0.98 0.01 265);
+  --popover: oklch(0.08 0.02 265);
+  --popover-foreground: oklch(0.98 0.01 265);
+  --primary: oklch(0.7 0.28 220);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.65 0.25 290);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.15 0.02 265);
+  --muted-foreground: oklch(0.55 0.02 265);
+  --accent: oklch(0.7 0.28 220);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.55 0.25 15);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.2 0.04 265);
+  --input: oklch(0.1 0.02 265);
+  --ring: oklch(0.7 0.28 220);
+}
+
+@layer base {
+  * { border-color: var(--border); }
+  body { background: var(--background); color: var(--foreground); }
+}
+
+.glass-panel { background: rgba(10, 12, 20, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(100,150,255,0.2); }
+.holographic-panel { background: rgba(6, 8, 15, 0.9); backdrop-filter: blur(16px); border: 1px solid rgba(100,150,255,0.25); animation: holographic-flicker 3s ease-in-out infinite; }
+
+@keyframes neon-pulse { 0%,100%{opacity:1;filter:drop-shadow(0 0 8px currentColor);} 50%{opacity:.8;filter:drop-shadow(0 0 20px currentColor);} }
+@keyframes scan-line { 0%{transform:translateY(-100%);} 100%{transform:translateY(100%);} }
+@keyframes grid-fade { 0%,100%{opacity:.3;} 50%{opacity:.6;} }
+@keyframes holographic-flicker { 0%,100%{opacity:1;} 50%{opacity:.95;} 75%{opacity:.98;} }
